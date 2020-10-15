@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Yu Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 600;
+    box-sizing: border-box;
+    margin-top: 160px;
+}
+
+.header-wrapper {
+    width: 100%;
+    background-color: white;
+    height: 160px;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+
+    .header {
+        box-sizing: border-box;
+        height: 160px;
+        background-color: white;
+        z-index: 99;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        position: fixed;
+        top: 0;
+
+        img {
+            width: 120px;
+            height: 38.08px;
+        }
+
+        .header-right {
+            margin: 0 0 0 auto;
+
+            a {
+                text-decoration: none;
+                color: black;
+                font-size: 14px;
+                font-weight: 400;
+                letter-spacing: 0.5px;
+                line-height: 24.5px;
+                margin: auto 0;
+                padding: 0px 25px;
+            }
+
+            .news {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.main1 {
+    display: flex;
+    .main1-left {
+        width: 50%;
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 39.6px;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 36px;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    .main1-right {
+        width: 50%;
+    }
+}
+
+.main3 {
+    display: flex;
+    padding: 0 30px;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    img {
+        width: 220px;
+        height: 462px;
+        margin: 0 10px;
+    }
+
+    h2 {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        line-height: 42px;
+        margin: 0 0 30px 0;
+        font-feature-settings: "palt";
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        line-height: 26.6px;
+        margin: 0 0 104px 0;
+        font-feature-settings: "palt";
+    }
+
+    .main3-left {
+        width: 47.5%;
+
+        .image1 {
+            display: flex;
+            margin-top: 24px;
+            margin-left: 16px;
+
+            img {
+                border-radius: 20px;
+            }
+        }
+    }
+
+    .main3-right {
+        width: 47.5%;
+        margin: 0 0 50px auto;
+
+        .image2 {
+            display: flex;
+            margin-top: 24px;
+            margin-left: 16px;
+
+            img {
+                border-radius: 20px;
+            }
+        }
+    }
+}
