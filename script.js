@@ -9,3 +9,13 @@ var mySwiper = new Swiper('.swiper-container', {
         reverseDirection: false
     }
 });
+
+$(function () {
+    /*クリックイベント*/
+    $('.tab-btn').on('click', function () {
+        /* 一旦.tab_itemから.is-active-itemを外す */
+        $('.tab-content').removeClass("tab-active");
+        /* クリックした.tab_btnに対応する.tab_itemに.is-active-itemをつける */
+        $($(this).attr("href")).addClass("tab-active");
+    });
+});
