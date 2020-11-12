@@ -1,22 +1,12 @@
-/*var mySwiper = new Swiper('.swiper-container', {
-    loop: true,
-    speed: 2000,
-    spacebetween: 0,
-    autoplay: {
-        delay: 5000,
-        stopOnLastSlide: false,
-        disableOnInteraction: false,
-        reverseDirection: false
-    }
-});*/
-
 var behavior = new Swiper('.slide-behaivor', {
     autoplay: {
         delay: 3000
     },
     loop: true,
     loopAdditionalSlides: 6,
+
     speed: 1000,
+    spaceBetween: 50,
 });
 
 var front = new Swiper('.slide-front', {
@@ -25,14 +15,40 @@ var front = new Swiper('.slide-front', {
     },
     loop: true,
     loopAdditionalSlides: 6,
-    speed: 700,
-    spaceBetween: 20,
+    speed: 1000,
+    spaceBetween: 0,
     thumbs: {
         swiper: behavior
     }
 
 });
 
+var suraido = new Swiper('.slide', {
+    autoplay: {
+        delay: 2000
+    },
+    centeredSlides: true,
+    slidesPerView: 2.76,
+    loop: true,
+    loopAdditionalSlides: 6,
+    speed: 500,
+    spaceBetween: 20,
+
+    thumbs: {
+        swiper: behavior
+    }
+});
+
+
+var mySwiper = new Swiper('.swiper-container', {
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullet',
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + "小野") + '</span>';
+        }
+    },
+});
 
 //querySelectorは任意のhtml取得
 var target1 = document.querySelector('.target1');
@@ -134,16 +150,16 @@ target4.addEventListener('click', () => {
 
 
 
-$(function() {
+$(function () {
     let tabtab = $(".tab-btn"); // tabのクラスを全て取得し、変数tabsに配列で定義
-    $(".tab-btn").on("click", function() { // tabをクリックしたらイベント発火
-      const index = tabtab.index(this); // クリックした箇所がタブの何番目か判定し、定数indexとして定義
-      $(".tab-content").removeClass("show").eq(index).addClass("show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
+    $(".tab-btn").on("click", function () { // tabをクリックしたらイベント発火
+        const index = tabtab.index(this); // クリックした箇所がタブの何番目か判定し、定数indexとして定義
+        $(".tab-content").removeClass("show").eq(index).addClass("show"); // showクラスを消して、contentクラスのindex番目にshowクラスを追加
     })
 });
 
 var start_height = 0, standard_height = 0;
-$(window).on('scroll',function(){
+$(window).on('scroll', function () {
     standard_height = $(this).scrollTop();
     if (standard_height >= start_height) {
         $('.header-wrapper').addClass('active');
@@ -153,3 +169,53 @@ $(window).on('scroll',function(){
     start_height = standard_height
 });
 
+var start_height = 0, standard_height = 0;
+$(window).on('scroll', function () {
+    standard_height = $(this).scrollTop();
+    if (standard_height >= start_height) {
+        $('.header-wrapper').addClass('active');
+    } else {
+        $('.header-wrapper').removeClass('active');
+    }
+    start_height = standard_height
+});
+
+const pos = $('.main4').offset();
+console.log(pos);
+
+$(window).scroll(function () {
+    let scrollTop = $(window).scrollTop();
+    let main4top = $(".main4").offset().top;
+    let main4_rtop = $(".main4-rimg").offset().top;
+    let main4_ltop = $(".main4-limg").offset().top;
+
+    let main10 = $(".main10").offset().top;
+    let main11 = $(".main11").offset().top;
+    let hot = main4top - 495;
+    let hut = main4_rtop - 495;
+    let set = main4_ltop - 495;
+    let sad = main10 - 570;
+    let cut = main11 - 505;
+    var start_height = 0
+    var standard_height = 0;
+
+    if (scrollTop > hot) {
+        $(".main4").addClass("is-in"); // スクロールが対象エリアに入った場合
+    }
+
+    if (scrollTop > hut) {
+        $(".main4-rimg").addClass("is"); // スクロールが対象エリアに入った場合
+    }
+
+    if (scrollTop > set) {
+        $(".main4-limg").addClass("is"); // スクロールが対象エリアに入った場合
+    }
+
+    if (scrollTop > sad) {
+        $(".main10").addClass("is"); // スクロールが対象エリアに入った場合
+    }
+
+    if (scrollTop > cut) {
+        $(".main11").addClass("is"); // スクロールが対象エリアに入った場合
+    }
+});

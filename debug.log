@@ -1,0 +1,2 @@
+[1111/161802.313:ERROR:settings.cc(320)] Settings magic is not 1129342067
+[1112/125151.921:ERROR:directory_reader_win.cc(43)] FindFirstFile: 指定されたパスが見つかりません。 (0x3)
